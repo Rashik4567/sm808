@@ -33,6 +33,7 @@ def access(request):
 def update(request):
     if request.method == 'POST':
         json_data = json.loads(request.body)
+        print("loaded")
         data = json_data['data']
         print(data)
         lat = request.POST.get("latitude", '0')
