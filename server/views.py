@@ -31,8 +31,8 @@ def access(request):
 @csrf_exempt
 def update(request):
     if request.method == 'POST':
-        lat = request.POST.get("lat")
-        lon = request.POST.get("lon")
+        lat = request.POST.get("latitude", '0')
+        lon = request.POST.get("lontitude", '0')
 
         database.update({"latitude":lat, "lontitude":lon})
     
