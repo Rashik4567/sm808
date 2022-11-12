@@ -1,0 +1,5 @@
+.vercel
+firebase.txt
+db.sqlite3
+*/__pycache__
+*/migrations
