@@ -34,10 +34,8 @@ def update(request):
     if request.method == 'POST':
         json_data = json.loads(request.body)
         print("loaded")
-        data = json_data['data']
-        print(data)
-        lat = request.POST.get("latitude", '0')
-        lon = request.POST.get("lontitude", '0')
+        lat = json_data["latitude"]
+        lon = json_data["lontitude"]
 
         database.update({"latitude":lat, "lontitude":lon})
     
