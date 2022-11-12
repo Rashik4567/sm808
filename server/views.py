@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 import pyrebase
+import json
 
 
 config = { 
@@ -31,6 +32,9 @@ def access(request):
 @csrf_exempt
 def update(request):
     if request.method == 'POST':
+        json_data = json.loads(request.body)
+        data = json_data['data']
+        print(data)
         lat = request.POST.get("latitude", '0')
         lon = request.POST.get("lontitude", '0')
 
